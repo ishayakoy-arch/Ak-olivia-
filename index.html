@@ -140,26 +140,21 @@
 
         /* 🎵 MUSIQUE (CORRIGÉE) */
         let musics = [
-            { src: "musics/music1.mp3", name: "🎶 doucement" },
-            { src: "musics/music3.mp3", name: "🎶 Baddies" },
-            { src: "musics/music9.mp3", name: "🎶 chérie coco" }
+            { src: "Musics/music1.mp3", name: "🎶 doucement" },
+            { src: "Musics/Music3.mp3", name: "🎶 Baddies" },
+            { src: "Musics/music9.mp3", name: "🎶 chérie coco" }
         ];
         let currentMusic = 0;
         let isPlaying = false;
-
-
         function loadMusic() {
             let audio = document.getElementById("musics");
             let name = document.getElementById("musicName");
-
             audio.src = musics[currentMusic].src;
             name.innerText = musics[currentMusic].name;
         }
-
         function togglePlay() {
             let audio = document.getElementById("musics");
             let btn = document.getElementById("playBtn");
-
             if (!isPlaying) {
                 loadMusic();
                 audio.play();
@@ -171,13 +166,11 @@
                 isPlaying = false;
             }
         }
-
         function nextMusic() {
             currentMusic = (currentMusic + 1) % musics.length;
             isPlaying = false;
             togglePlay();
         }
-
         function prevMusic() {
             currentMusic = (currentMusic - 1 + musics.length) % musics.length;
             isPlaying = false;
